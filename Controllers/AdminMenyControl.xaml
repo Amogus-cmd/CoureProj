@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WpfApp2.AdminMenyControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Content="Back" Command="{Binding Previous}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="28" Width="52">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Artist" Command ="{Binding ToArtist}" HorizontalAlignment="Left" Margin="529,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="25" Width="99">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Group" Command ="{Binding ToGroup}" HorizontalAlignment="Left" Margin="400,73,0,0" VerticalAlignment="Top" Height="25" Width="99"/>
+        <Button Content="Performer" Command ="{Binding ToPerformer}" HorizontalAlignment="Left" Margin="264,73,0,0" VerticalAlignment="Top" Height="25" Width="99"/>
+        <Button Content="Track" Command ="{Binding ToTrack}" HorizontalAlignment="Left" Margin="264,133,0,0" VerticalAlignment="Top" Height="24" Width="99"/>
+        <Button Content="Performer+Track" Command ="{Binding ToPerformerTrack}" HorizontalAlignment="Left" Margin="400,133,0,0" VerticalAlignment="Top" Width="99" Height="24"/>
+        <Button Content="Album" Command ="{Binding ToAlbum}" HorizontalAlignment="Left" Margin="529,133,0,0" VerticalAlignment="Top" Height="25" Width="99"/>
+        <Button Content="AlbumTracks" Command="{Binding ToAlbumTrack}" HorizontalAlignment="Left" Margin="402,186,0,0" VerticalAlignment="Top" Height="26" Width="95"/>
+
+    </Grid>
+</UserControl>

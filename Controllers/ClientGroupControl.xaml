@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WpfApp2.ClientGroupControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp2" d:DataContext="{d:DesignInstance Type=local:ClientGroupView}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Content="Back" Command ="{Binding Previous}"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="PerformerData"  Margin="245,10,10,123" ItemsSource="{Binding Display}" AutoGenerateColumns="false" SelectionMode="Single" IsReadOnly="True" Grid.RowSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Logo" Width="SizeToCells"
+                                        IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Height ="60" Width="60" Source="{Binding Performer.Logo}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header ="Название Группы" Binding="{Binding Performer.PerformerName}" Width="*"/>
+                <DataGridTextColumn Header ="Имя Исполнителя" Binding="{Binding Artist.ArtistName}" Width="*"/>
+                <DataGridTextColumn Header ="Дата рождения" Binding="{Binding Artist.DateOfBirth,StringFormat=\{0:dd.MM.yyyy\}}" Width="*"/>
+                <DataGridTextColumn Header ="Страна" Binding="{Binding Artist.Country}" Width="*"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Margin="90,99,0,0" Text="{Binding Textboxartist}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="90,138,0,0" Text="{Binding Textboxperformer}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Margin="90,178,0,0" Text="{Binding Textboxcountry}" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Search" Command ="{Binding Search}" HorizontalAlignment="Left" Margin="96,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="Clear" Command ="{Binding Clear}" HorizontalAlignment="Left" Margin="165,225,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="Artist name" HorizontalAlignment="Left" Margin="14,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="Group" HorizontalAlignment="Left" Margin="14,134,0,0" VerticalAlignment="Top"/>
+        <Label Content="Country" HorizontalAlignment="Left" Margin="14,174,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
